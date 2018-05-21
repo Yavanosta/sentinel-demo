@@ -1,0 +1,208 @@
+<html>
+  <head>
+    <style>
+      /**
+        * To make understanding the demo easier, i've separated layout
+        * related styles and reast of the styles such as colors and fonts.
+        */
+
+      /**
+        * LAYOUT RELATED STYLES
+        */
+      .container {
+        overflow-y: scroll;
+
+        box-sizing: border-box;
+        width: 500px;
+        height: 90vh;
+        max-height: 500px;
+      }
+
+      .article {
+        padding: 30px;
+      }
+
+      .header {
+        --header-sticky-top: 15px;
+        --header-sticky-bottom: 20px;
+
+        position: sticky;
+        top: var(--header-sticky-top);
+        bottom: var(--header-sticky-bottom);
+      }
+
+      .header-sentinel {
+        position: absolute;
+        left: 0;
+
+        width: 100%;
+        height: 1px;
+
+        pointer-events: none;
+      }
+
+      .header-sentinel-top {
+        top: calc(-1px + -1 * var(--header-sticky-top));
+      }
+
+      .header-sentinel-bottom {
+        bottom: calc(-1px + -1 * var(--header-sticky-bottom));
+      }
+
+      /**
+        * PRESENTATION RELATED STYLES
+        */
+      body {
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        font-size: 15px;
+      }
+
+      .container {
+        border: 10px solid darkgrey;
+      }
+
+      .article {
+        margin-bottom: 30px;
+
+        background: antiquewhite;
+      }
+
+      .header {
+        padding: 5px;
+
+        color: #fff;
+        border-radius: 3px;
+        background: #0073ff;
+
+        font-size: 3em;
+      }
+
+      .header.stuck-to-top {
+        background: darkgreen;
+      }
+
+      .header.stuck-to-bottom {
+        background: darkmagenta;
+      }
+
+      .header-sentinel {
+        background-color: red;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="last-event">Scroll to get some events...</div>
+    <div class="container">
+      <div class="article">
+        <div class="header">
+          Article - 1
+          <div class="header-sentinel header-sentinel-top"></div>
+          <div class="header-sentinel header-sentinel-bottom"></div>
+        </div>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec aliquet placerat tortor, non posuere lectus viverra eget. Fusce dictum nulla eget vestibulum porttitor. Mauris mollis metus non lacinia rutrum. Ut venenatis interdum odio, sit amet efficitur ex tincidunt ac. Morbi dictum hendrerit metus sed auctor. Vivamus quam sem, convallis maximus interdum sed, mattis id leo. Morbi faucibus lorem et nisi sodales dictum. Sed elit diam, elementum eu ultrices eget, varius et quam. Vivamus malesuada dignissim nisi, ut fermentum ex gravida non. Maecenas auctor mi vitae dolor aliquam, non imperdiet eros porttitor. Etiam erat lacus, dignissim et nulla eu, mollis placerat ante. Quisque ac mattis diam, at convallis nibh. Fusce in neque accumsan arcu rutrum faucibus. Nam in ex porttitor, pretium massa at, varius ex.</p>
+        <p>Vivamus lacinia fermentum gravida. Nulla facilisi. Nunc ultrices congue velit, non convallis diam mollis ac. Suspendisse ut tempus odio, sit amet tincidunt orci. Suspendisse aliquet ipsum quis ultrices blandit. Donec ut sagittis metus. Nullam ac nibh et enim porttitor aliquet id non dui.</p>
+        <p>Suspendisse vel purus auctor, tristique dui at, elementum felis. Donec metus mauris, ornare quis tempor id, pellentesque ac felis. Curabitur lacinia malesuada massa quis sagittis. Cras finibus elementum finibus. Ut in leo faucibus urna aliquam condimentum. Donec non hendrerit orci. Ut at aliquet dolor. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Nullam elementum lacus eu malesuada aliquam. Nulla dictum metus non ipsum dignissim, at rutrum diam rhoncus. Morbi tempor erat nec nisi ornare rutrum eu in orci. In dolor ante, pharetra sodales ornare sit amet, consequat a sapien. Maecenas et arcu vitae erat ultricies convallis a ut risus. Cras commodo ante est, egestas sollicitudin lacus pretium eget. Donec fringilla lectus vitae velit dictum pretium. Maecenas varius risus sit amet ornare scelerisque.</p>
+      </div>
+
+      <div class="article">
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec aliquet placerat tortor, non posuere lectus viverra eget. Fusce dictum nulla eget vestibulum porttitor. Mauris mollis metus non lacinia rutrum. Ut venenatis interdum odio, sit amet efficitur ex tincidunt ac. Morbi dictum hendrerit metus sed auctor. Vivamus quam sem, convallis maximus interdum sed, mattis id leo. Morbi faucibus lorem et nisi sodales dictum. Sed elit diam, elementum eu ultrices eget, varius et quam. Vivamus malesuada dignissim nisi, ut fermentum ex gravida non. Maecenas auctor mi vitae dolor aliquam, non imperdiet eros porttitor. Etiam erat lacus, dignissim et nulla eu, mollis placerat ante. Quisque ac mattis diam, at convallis nibh. Fusce in neque accumsan arcu rutrum faucibus. Nam in ex porttitor, pretium massa at, varius ex.</p>
+        <div class="header">
+          Article - 2
+          <div class="header-sentinel header-sentinel-top"></div>
+          <div class="header-sentinel header-sentinel-bottom"></div>
+        </div>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec aliquet placerat tortor, non posuere lectus viverra eget. Fusce dictum nulla eget vestibulum porttitor. Mauris mollis metus non lacinia rutrum. Ut venenatis interdum odio, sit amet efficitur ex tincidunt ac. Morbi dictum hendrerit metus sed auctor. Vivamus quam sem, convallis maximus interdum sed, mattis id leo. Morbi faucibus lorem et nisi sodales dictum. Sed elit diam, elementum eu ultrices eget, varius et quam. Vivamus malesuada dignissim nisi, ut fermentum ex gravida non. Maecenas auctor mi vitae dolor aliquam, non imperdiet eros porttitor. Etiam erat lacus, dignissim et nulla eu, mollis placerat ante. Quisque ac mattis diam, at convallis nibh. Fusce in neque accumsan arcu rutrum faucibus. Nam in ex porttitor, pretium massa at, varius ex.</p>
+        <p>Vivamus lacinia fermentum gravida. Nulla facilisi. Nunc ultrices congue velit, non convallis diam mollis ac. Suspendisse ut tempus odio, sit amet tincidunt orci. Suspendisse aliquet ipsum quis ultrices blandit. Donec ut sagittis metus. Nullam ac nibh et enim porttitor aliquet id non dui.</p>
+        <p>Suspendisse vel purus auctor, tristique dui at, elementum felis. Donec metus mauris, ornare quis tempor id, pellentesque ac felis. Curabitur lacinia malesuada massa quis sagittis. Cras finibus elementum finibus. Ut in leo faucibus urna aliquam condimentum. Donec non hendrerit orci. Ut at aliquet dolor. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Nullam elementum lacus eu malesuada aliquam. Nulla dictum metus non ipsum dignissim, at rutrum diam rhoncus. Morbi tempor erat nec nisi ornare rutrum eu in orci. In dolor ante, pharetra sodales ornare sit amet, consequat a sapien. Maecenas et arcu vitae erat ultricies convallis a ut risus. Cras commodo ante est, egestas sollicitudin lacus pretium eget. Donec fringilla lectus vitae velit dictum pretium. Maecenas varius risus sit amet ornare scelerisque.</p>
+      </div>
+
+      <div class="article">
+        <div class="header">
+          Article - 3
+          <div class="header-sentinel header-sentinel-top"></div>
+          <div class="header-sentinel header-sentinel-bottom"></div>
+        </div>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec aliquet placerat tortor, non posuere lectus viverra eget. Fusce dictum nulla eget vestibulum porttitor. Mauris mollis metus non lacinia rutrum. Ut venenatis interdum odio, sit amet efficitur ex tincidunt ac. Morbi dictum hendrerit metus sed auctor. Vivamus quam sem, convallis maximus interdum sed, mattis id leo. Morbi faucibus lorem et nisi sodales dictum. Sed elit diam, elementum eu ultrices eget, varius et quam. Vivamus malesuada dignissim nisi, ut fermentum ex gravida non. Maecenas auctor mi vitae dolor aliquam, non imperdiet eros porttitor. Etiam erat lacus, dignissim et nulla eu, mollis placerat ante. Quisque ac mattis diam, at convallis nibh. Fusce in neque accumsan arcu rutrum faucibus. Nam in ex porttitor, pretium massa at, varius ex.</p>
+        <p>Vivamus lacinia fermentum gravida. Nulla facilisi. Nunc ultrices congue velit, non convallis diam mollis ac. Suspendisse ut tempus odio, sit amet tincidunt orci. Suspendisse aliquet ipsum quis ultrices blandit. Donec ut sagittis metus. Nullam ac nibh et enim porttitor aliquet id non dui.</p>
+        <p>Suspendisse vel purus auctor, tristique dui at, elementum felis. Donec metus mauris, ornare quis tempor id, pellentesque ac felis. Curabitur lacinia malesuada massa quis sagittis. Cras finibus elementum finibus. Ut in leo faucibus urna aliquam condimentum. Donec non hendrerit orci. Ut at aliquet dolor. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Nullam elementum lacus eu malesuada aliquam. Nulla dictum metus non ipsum dignissim, at rutrum diam rhoncus. Morbi tempor erat nec nisi ornare rutrum eu in orci. In dolor ante, pharetra sodales ornare sit amet, consequat a sapien. Maecenas et arcu vitae erat ultricies convallis a ut risus. Cras commodo ante est, egestas sollicitudin lacus pretium eget. Donec fringilla lectus vitae velit dictum pretium. Maecenas varius risus sit amet ornare scelerisque.</p>
+      </div>
+
+      <div class="article">
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec aliquet placerat tortor, non posuere lectus viverra eget. Fusce dictum nulla eget vestibulum porttitor. Mauris mollis metus non lacinia rutrum. Ut venenatis interdum odio, sit amet efficitur ex tincidunt ac. Morbi dictum hendrerit metus sed auctor. Vivamus quam sem, convallis maximus interdum sed, mattis id leo. Morbi faucibus lorem et nisi sodales dictum. Sed elit diam, elementum eu ultrices eget, varius et quam. Vivamus malesuada dignissim nisi, ut fermentum ex gravida non. Maecenas auctor mi vitae dolor aliquam, non imperdiet eros porttitor. Etiam erat lacus, dignissim et nulla eu, mollis placerat ante. Quisque ac mattis diam, at convallis nibh. Fusce in neque accumsan arcu rutrum faucibus. Nam in ex porttitor, pretium massa at, varius ex.</p>
+        <p>Vivamus lacinia fermentum gravida. Nulla facilisi. Nunc ultrices congue velit, non convallis diam mollis ac. Suspendisse ut tempus odio, sit amet tincidunt orci. Suspendisse aliquet ipsum quis ultrices blandit. Donec ut sagittis metus. Nullam ac nibh et enim porttitor aliquet id non dui.</p>
+        <p>Suspendisse vel purus auctor, tristique dui at, elementum felis. Donec metus mauris, ornare quis tempor id, pellentesque ac felis. Curabitur lacinia malesuada massa quis sagittis. Cras finibus elementum finibus. Ut in leo faucibus urna aliquam condimentum. Donec non hendrerit orci. Ut at aliquet dolor. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Nullam elementum lacus eu malesuada aliquam. Nulla dictum metus non ipsum dignissim, at rutrum diam rhoncus. Morbi tempor erat nec nisi ornare rutrum eu in orci. In dolor ante, pharetra sodales ornare sit amet, consequat a sapien. Maecenas et arcu vitae erat ultricies convallis a ut risus. Cras commodo ante est, egestas sollicitudin lacus pretium eget. Donec fringilla lectus vitae velit dictum pretium. Maecenas varius risus sit amet ornare scelerisque.</p>
+        <div class="header">
+          Article - 4
+          <div class="header-sentinel header-sentinel-top"></div>
+          <div class="header-sentinel header-sentinel-bottom"></div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      (function() {
+        const container = document.querySelector('.container');
+        const observer = new IntersectionObserver(records => {
+          for (const record of records) {
+            // Saving links to useful elements.
+            const sentinel = record.target;
+            const header = sentinel.parentElement;
+
+            // Detecting stickied side and status.
+            const isTopSentinel =
+                sentinel.classList.contains('header-sentinel-top')
+            const isStuck =
+                record.isIntersecting &&
+                record.intersectionRatio < 0.5 &&
+                (isTopSentinel ?
+                    record.intersectionRect.top === record.rootBounds.top :
+                    record.intersectionRect.top === record.rootBounds.bottom);
+
+            // Do some position related work.
+            const stuckClassName =
+                isTopSentinel ? 'stuck-to-top' : 'stuck-to-bottom';
+            // Dispatch event.
+            if (isStuck !== header.classList.contains(stuckClassName)) {
+              header.dispatchEvent(new CustomEvent(
+                isTopSentinel ?
+                    'stuck-to-top-change' :
+                    'stuck-to-bottom-change',
+                {
+                  bubbles: true,
+                  detail: {header: header, isStuck: isStuck}
+                },
+              ));
+            }
+            // Apply class.
+            header.classList.toggle(stuckClassName, isStuck);
+          }
+        }, {
+          root: container,
+          threshold: [0, 1],
+        });
+
+        [...document.querySelectorAll('.header-sentinel')].forEach(header => {
+          observer.observe(header);
+        });
+      })();
+
+      (function() {
+        const container = document.querySelector('.container');
+        const lastEvent = document.querySelector('.last-event');
+        container.addEventListener('stuck-to-top-change', (event) => {
+          lastEvent.textContent =
+            event.detail.header.textContent +
+            ' TOP ' +
+            event.detail.isStuck;
+        });
+
+        container.addEventListener('stuck-to-bottom-change', (event) => {
+          lastEvent.textContent =
+            event.detail.header.textContent +
+            ' BOTTOM ' +
+            event.detail.isStuck;
+        });
+      })();
+    </script>
+  </body>
+</html>
